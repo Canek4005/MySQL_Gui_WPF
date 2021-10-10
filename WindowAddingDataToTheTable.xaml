@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfSQLapp.WindowAddingDataToTheTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSQLapp"
+        mc:Ignorable="d"
+        Title="WindowAddingDataToTheTable" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.8*"/>
+        </Grid.ColumnDefinitions>
+        <!--<StackPanel Orientation="Vertical" Grid.Column="0" Margin="20">
+            <TextBox/>
+            <TextBox/>
+            <TextBox/>
+            <TextBox/>
+        </StackPanel>-->
+        <ListView Grid.Column="1" Name="dataGrid" Margin="20"  ItemsSource="{Binding}" >
+            <ListView.View>
+                
+                <GridView>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="100">Ваше значение</GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="150">Название переменной</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Type}" Width="120">Тип переменной</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Attribute1}" Width="80">Аттрибут 1</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Attribute2}" Width="80">Аттрибут 2</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            
+
+
+        </ListView>
+    </Grid>
+</Window>

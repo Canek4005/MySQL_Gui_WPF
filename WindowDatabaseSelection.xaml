@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfSQLapp.WindowDatabaseSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSQLapp"
+        mc:Ignorable="d"
+        Title="WindowDatabaseSelection" Height="450" Width="800"
+        Closed="Window_Closed"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="ButtonFormating" TargetType="Button">
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Margin" Value="50,30,50,70"/>
+            <Setter Property="BorderBrush" Value="Indigo"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Button Content="&lt;--" FontSize="40" Background="White" BorderBrush="Transparent"  Width="60" Height="60"  VerticalAlignment="Top" HorizontalAlignment="Left" Click="Button_Click" Cursor="None"/>
+        <DockPanel  Grid.Row="0">
+            <TextBlock  Text="Список баз данных" Margin="10" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" DockPanel.Dock="Top"/>
+            <ListBox Name="ListBoxTables" Grid.Row="0" Background="AntiqueWhite" Margin="50,10,50,0">
+
+            </ListBox>
+        </DockPanel>
+        
+        <DockPanel  Grid.Row="1" HorizontalAlignment="Center">
+            <Button Name="ButtonDeleteDatabase" Content="Удалить" Style="{StaticResource ButtonFormating}" DockPanel.Dock="Left" Click="ButtonDeleteDatabase_Click_1"/>
+            <Button Name="ButtonCreateDatabase" Content="Создать" Style="{StaticResource ButtonFormating}" Click="Button_Click_1"/>
+            <Button Content="Открыть" Style="{StaticResource ButtonFormating}" DockPanel.Dock="Right" Click="Button_Click_2"/>
+        </DockPanel>
+    </Grid>
+</Window>

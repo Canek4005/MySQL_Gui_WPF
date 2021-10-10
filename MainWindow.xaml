@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfSQLapp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSQLapp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White"/>
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue"/>
+        <SolidColorBrush x:Key="BrushWatermarkBorder" Color="Indigo"/>
+
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter"/>
+
+        <Style x:Key="EntryFieldStyle" TargetType="Grid">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="GhostWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Проект взаимодействия приложения с базами данных MySQL" TextWrapping="Wrap"  FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
+            <Grid  Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}">
+                <TextBlock Margin="5" Text="Введите адрес сервера и порт через двоеточие" Foreground="{StaticResource brushWatermarkForeground}" HorizontalAlignment="Center"
+                       Visibility="{Binding ElementName=TextBoxServer,Path=Text.IsEmpty,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBox Name="TextBoxServer" Text="localhost:3306" Background="Transparent" BorderBrush="{StaticResource BrushWatermarkBorder}"
+                      TextWrapping="Wrap" VerticalAlignment="Center"  />
+            </Grid>
+            <Grid  Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}">
+                <TextBlock Margin="5" Text="Введите логин" Foreground="{StaticResource brushWatermarkForeground}" HorizontalAlignment="Center"
+                       Visibility="{Binding ElementName=TextBoxLogin,Path=Text.IsEmpty,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBox Name="TextBoxLogin" Text="root" Background="Transparent" BorderBrush="{StaticResource BrushWatermarkBorder}"
+                      TextWrapping="Wrap" VerticalAlignment="Center"  />
+            </Grid>
+        </StackPanel>
+        
+        <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource brushWatermarkBackground}" Style="{StaticResource EntryFieldStyle}">
+            <TextBlock Name="WatermarkTextBlock"
+                Margin="5" Text="Введите пароль" Foreground="{StaticResource brushWatermarkForeground}" HorizontalAlignment="Center"
+                       
+                       />
+            <PasswordBox Name="TextBoxPassword" Password="2813308004" Background="Transparent" BorderBrush="{StaticResource BrushWatermarkBorder}"
+                       VerticalAlignment="Center" PasswordBox.PasswordChanged="xtxUserEntry2_PasswordChanged"  />
+        </Grid>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="200,50,200,20" Background="CornflowerBlue" ToolTip="Нажмите для подключения к серверу" 
+                Content="Подключение" FontSize="30" FontFamily="Impact" Click="Button_Click"/>
+        
+    </Grid>
+</Window>

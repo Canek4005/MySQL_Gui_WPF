@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfSQLapp.WindowCreateDatabase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSQLapp"
+        mc:Ignorable="d"
+        Title="WindowCreateDatabase" Height="250" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox Name="TextBoxDatabase" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Height="25" Background="LightGray" />
+        <Button Content="Добавить базу данных" Name="ButtonAddDatabase" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="150" Height="40" Click="ButtonAddDatabase_Click"/> 
+    </Grid>
+</Window>
