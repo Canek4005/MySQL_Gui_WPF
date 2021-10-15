@@ -80,7 +80,7 @@ namespace WpfSQLapp
             private string type;
             private string attribute1;
             private string attribute2;
-            private string val;
+            
             public string Name
             {
                 get
@@ -125,17 +125,7 @@ namespace WpfSQLapp
                     attribute2 = value;
                 }
             }
-            public string YourValue
-            {
-                get
-                {
-                    return val;
-                }
-                set
-                {
-                    val = value;
-                }
-            }
+            
 
 
         }

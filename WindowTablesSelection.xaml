@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfSQLapp"
         mc:Ignorable="d"
-        Title="WindowTablesSelection" Height="450" Width="800">
+        Title="WindowTablesSelection" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="ButtonFormating" TargetType="Button">
             <Setter Property="Background" Value="LightGreen"/>

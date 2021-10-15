@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfSQLapp"
         mc:Ignorable="d"
-        Title="WindowDataSelection" Height="450" Width="800" >
+        Title="WindowDataSelection" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         
         <Style x:Key="ButtonFormating" TargetType="Button">
@@ -41,9 +41,9 @@
         </DockPanel>
 
         <DockPanel  Grid.Row="1" HorizontalAlignment="Center">
-            <Button Name="ButtonDeleteTable" Content="Удалить" Style="{StaticResource ButtonFormating}" DockPanel.Dock="Left" />
-            <Button Name="ButtonAddData" Content="Создать" Style="{StaticResource ButtonFormating}" Click="ButtonAddData_Click" />
-            <Button Name ="ButtonOpenTable" Content="Открыть" Style="{StaticResource ButtonFormating}" DockPanel.Dock="Right" />
+            
+            <Button Name="ButtonAddData" Width="200" Content="Просмотреть настройки таблицы" Style="{StaticResource ButtonFormating}" Click="ButtonAddData_Click" />
+            
         </DockPanel>
     </Grid>
 </Window>
